@@ -7,7 +7,7 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 
-// servers the public static pages in the appliction directory
+// servers the public static pages in the appliction
 app.use(express.static(process.cwd() + '/public'));
 
 app.use(bodyParser.urlencoded({
@@ -23,7 +23,7 @@ app.engine('hbs', exphbs({
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-var routes = require('./controllers/burgers_controllers.js');
+var routes = require('./controllers/burgers_controller.js');
 app.use('/', routes);
 
 
